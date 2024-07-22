@@ -6,7 +6,7 @@ order by 3, 4
 --from PortifolioProject..CovidVaccinations
 --order by 3, 4
 
--- Selecting the data that we are going to use
+-- Selecting the data that I am going to use
 
 select location, date, total_cases, new_cases, total_deaths, population
 from PortifolioProject..CovidDeaths
@@ -93,7 +93,7 @@ join PortifolioProject..CovidVaccinations as vac
 where dea.continent is not null
 order by 2,3
 
--- Use CTE
+-- Using CTE
 
 with PopvsVac (Continent, Location, Date, Population, New_vaccinations, RollingPeopleVaccinated)
 as
@@ -110,7 +110,7 @@ where dea.continent is not null
 select *, (RollingPeopleVaccinated / Population)*100
 from PopvsVac
 
--- Temp Table
+-- Using Temp Table
 
 drop table if exists #PercentagePopulationVaccinated
 create table #PercentagePopulationVaccinated
